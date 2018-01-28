@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.useyourloaf.dt.unit.manual.singleViewApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view. The app delegate create the main window and root view controller (no Storyboard).</string>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>rootClassName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Root View Controller Class:</string>
+			<key>Description</key>
+			<string>Class name of root view controller</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>RootViewController</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>AppDelegate.m:imports:importHeader:___VARIABLE_rootClassName___.h</string>
+						<string>___VARIABLE_rootClassName___.h:comments</string>
+						<string>___VARIABLE_rootClassName___.h:imports:importCocoa</string>
+						<string>___VARIABLE_rootClassName___.h:interface(___FILEBASENAME___ : UIViewController)</string>
+						<string>___VARIABLE_rootClassName___.m:comments</string>
+						<string>___VARIABLE_rootClassName___.m:imports:importHeader:___VARIABLE_rootClassName___.h</string>
+						<string>___VARIABLE_rootClassName___.m:extension</string>
+						<string>___VARIABLE_rootClassName___.m:implementation:methods:viewDidLoad(- (void\)viewDidLoad)</string>
+						<string>___VARIABLE_rootClassName___.m:implementation:methods:viewDidLoad:super</string>
+					</array>
+				</dict>
+				<key>Swift</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>___VARIABLE_rootClassName___.swift:comments</string>
+						<string>___VARIABLE_rootClassName___.swift:imports:importCocoa</string>
+						<string>___VARIABLE_rootClassName___.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+						<string>___VARIABLE_rootClassName___.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+						<string>___VARIABLE_rootClassName___.swift:implementation:methods:viewDidLoad:super</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>navigationController</string>
+			<key>Name</key>
+			<string>Embed in Navigation Controller</string>
+			<key>Description</key>
+			<string>Is the root view controller embedded in a navigation controller</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Units</key>
+			<dict>
+				<key>false</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>languageChoice</key>
+							<string>Objective-C</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+							<string>self.window = [[UIWindow alloc] initWithFrame:[UIScreen.mainScreen bounds]];
+self.window.backgroundColor = UIColor.whiteColor;
+self.window.rootViewController = [[___VARIABLE_rootClassName___ alloc] init];
+[self.window makeKeyAndVisible];</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>languageChoice</key>
+							<string>Swift</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+							<string>window = UIWindow(frame: UIScreen.main.bounds)
+window?.backgroundColor = .white
+window?.rootViewController = ___VARIABLE_rootClassName___()
+window?.makeKeyAndVisible()</string>
+						</dict>
+					</dict>
+				</array>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>languageChoice</key>
+							<string>Objective-C</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.m:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+							<string>self.window = [[UIWindow alloc] initWithFrame:[UIScreen.mainScreen bounds]];
+self.window.backgroundColor = UIColor.whiteColor;
+___VARIABLE_rootClassName___ *rootViewController = [[___VARIABLE_rootClassName___ alloc] init];
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+self.window.rootViewController = navigationController;
+[self.window makeKeyAndVisible];</string>
+						</dict>
+					</dict>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>languageChoice</key>
+							<string>Swift</string>
+						</dict>
+						<key>Definitions</key>
+						<dict>
+							<key>AppDelegate.swift:implementation:methods:applicationdidFinishLaunchingWithOptions:body</key>
+							<string>window = UIWindow(frame: UIScreen.main.bounds)
+window?.backgroundColor = .white
+let rootViewController = ___VARIABLE_rootClassName___()
+let navigationController = UINavigationController(rootViewController: rootViewController)
+window?.rootViewController = navigationController
+window?.makeKeyAndVisible()</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>*:implementation:methods:applicationWillResignActive:comments</key>
+		<string></string>
+		<key>*:implementation:methods:applicationDidEnterBackground:comments</key>
+		<string></string>
+		<key>*:implementation:methods:applicationWillEnterForeground:comments</key>
+		<string></string>
+		<key>*:implementation:methods:applicationDidBecomeActive:comments</key>
+		<string></string>
+		<key>*:implementation:methods:applicationWillTerminate:comments</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>
