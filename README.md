@@ -10,8 +10,11 @@ See this blog post for further details:
 
 ### Installation
 
-1. If it does not yet exist create the "Project Templates" folder under your home directory:
+To install or update the templates you need:
+* Quit Xcode
+* On the command line:
 
-        $ mkdir -p ~/Library/Developer/Xcode/Templates/Project\ Templates
+        git clone https://github.com/kharrison/Xcode-Templates
+		sh ./install.sh
+		rm -rf Xcode-Templates
 
-2. Copy the contents of the `Project Templates` folder in this repository into your "Project Templates" folder.
