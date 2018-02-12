@@ -13,8 +13,11 @@ See this blog post for further details:
 To install or update the templates you need:
 * Quit Xcode
 * On the command line:
-
-        git clone https://github.com/kharrison/Xcode-Templates
-		sh ./install.sh
-		rm -rf Xcode-Templates
-
+```
+  cd ~/Downloads
+  git clone https://github.com/kharrison/Xcode-Templates
+  cd Xcode-Templates
+  sh ./install.sh
+  cd ..
+  rm -rf Xcode-Templates
+```
