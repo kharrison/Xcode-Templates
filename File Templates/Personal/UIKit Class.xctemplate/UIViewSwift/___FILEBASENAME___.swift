@@ -2,8 +2,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_cocoaTouchSubclass___ {
-
+final class ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_cocoaTouchSubclass___ {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
